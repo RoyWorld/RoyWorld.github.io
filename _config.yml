@@ -10,7 +10,7 @@ url: "http://royworld.github.io" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
-#twitter_username: yulijia
+### twitter_username: yulijia
 github_username:  RoyWorld
 disqus_shortname: r0yz2zchan
 favicon:     "/images/stormtroopocat.png"
