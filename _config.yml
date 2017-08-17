@@ -1,9 +1,9 @@
 ### Site info:
-title: You shouldn't come here to waste time!!!
-tagline: Another Jekyll theme, Freshman twenty-first
+title: YOU SHOULDN'T COME HERE TO WASTE TIME!!!
+tagline: It's unquestionable that grass is greener on the other sider!!! 
 author: RoyChan
 email: r0Yz2ZcHAn@gmail.com
-description: It's unquestionable that grass is greener on the other sider!!! # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+description: WHY WOULD YOU LIKE TO SUBSCRIBE A SHIT? # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Jekyll, theme, Freshman21"
 baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "http://royworld.github.io" # the base hostname & protocol for your site
@@ -13,7 +13,7 @@ locale: en_US
 #twitter_username: yulijia
 github_username:  RoyWorld
 disqus_shortname: r0yz2zchan
-favicon:     "/images/favicon.ico"
+favicon:     "/images/stormtroopocat.png"
 aboutme: Hi, this is RoyChan. I hope you'll get what you searching. # these are shown on aboutme-sidebar.
 aboutme_photo: https://avatars0.githubusercontent.com/u/12530872?v=4&u=246d8ba13c670a8db18544c47e558e3e9fd8bd5a&s=400 # your photo.
 google_analytics_key: UA-57979084-1 # put YOUR key here to enable tracking! (blank to disable)
