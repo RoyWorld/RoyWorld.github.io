@@ -10,7 +10,7 @@ tags:
 - lambda expressions
 ---
 
-###change of interface
+# change of interface
 在java8中，interface可加入一个由default关键字修饰的method，这个method类似于abstract method，有具体的实现方式，但却不需要subclass继承
 
 <java>
@@ -35,7 +35,7 @@ tags:
     
 </java>
 
-###why we need lambda expressions
+# why we need lambda expressions
 lambda expressions的出现最主要的目的就是为了简化anonymous class的书写
 ，上述代码可做如下改写
 <java>
@@ -45,7 +45,7 @@ lambda expressions的出现最主要的目的就是为了简化anonymous class�
 </java>
 however，如果真的在compiler上做这样的改写，你会发现这会出现compile error<code>:stuck_out_tongue_winking_eye:</code>，实际上这里涉及到一个lambda的scope问题，这在后面会有详细地讲解
 
-###FunctionalInterface annotation
+# FunctionalInterface annotation
 <code>@FunctionalInterface</code>这个注解是解决interface中type inference问题。当interface中含有generic type时，需要加入此注解来让compiler识别出确定的type，如以下代码。
 
 <java>
@@ -61,7 +61,7 @@ however，如果真的在compiler上做这样的改写，你会发现这会出�
     
 </java>
 
-###lambda in constructor and method
+# lambda in constructor and method
 constructor和method的lambda expressions是使用运算符<code>::</code>。这本质上就是用constructor或method来替换对应在interface中declare的method。因为是替换，所以parameter type和return type都必须一致。而对于method来说，需要使用static来修饰，否则需要相关的object。
 <java>
 
@@ -102,7 +102,7 @@ constructor和method的lambda expressions是使用运算符<code>::</code>。这
 
 </java>
 
-###lambda scopes
+# lambda scopes
 这里借[官方文档](http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2)的一段话:
 
 >Unlike code appearing in anonymous class declarations, the meaning of **names** and the **this** and **super** keywords appearing in a lambda body, along with the accessibility of referenced declarations, are the same as in the surrounding context (except that lambda parameters introduce new names).
@@ -139,7 +139,7 @@ constructor和method的lambda expressions是使用运算符<code>::</code>。这
 对于local variables，可以不使用final来做修饰，但必须是implicitly final，否则会有compile error。而对于field和static variables，都是和anonymous class一致，这里就不再赘述了
 
 
-###references:
+# references:
 - http://winterbe.com/posts/2014/03/16/java-8-tutorial/
 - https://stackoverflow.com/questions/33108540/why-can-we-not-use-default-methods-in-lambda-expressions
 - http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2
