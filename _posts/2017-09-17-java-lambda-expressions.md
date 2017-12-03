@@ -126,7 +126,10 @@ Main@f6f4d33
 
 
 # references:
-- [http://winterbe.com/posts/2014/03/16/java-8-tutorial/][http://winterbe.com/posts/2014/03/16/java-8-tutorial/]
-- [https://stackoverflow.com/questions/33108540/why-can-we-not-use-default-methods-in-lambda-expressions][https://stackoverflow.com/questions/33108540/why-can-we-not-use-default-methods-in-lambda-expressions]
-- [http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2][http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2]
+- [http://winterbe.com/posts/2014/03/16/java-8-tutorial/][R1]
+- [https://stackoverflow.com/questions/33108540/why-can-we-not-use-default-methods-in-lambda-expressions][R2]
+- [http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2][R3]
 
+[R1]: http://winterbe.com/posts/2014/03/16/java-8-tutorial/
+[R2]: https://stackoverflow.com/questions/33108540/why-can-we-not-use-default-methods-in-lambda-expressions
+[R3]: http://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27.2
