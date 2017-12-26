@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "java lambda expressions"
+title:  "Java Lambda Expressions"
 date:   2017-09-17 23:49:20 -0700
 category: java
 published: true
