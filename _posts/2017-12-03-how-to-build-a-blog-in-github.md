@@ -41,6 +41,7 @@ However, 我是直接skip了前两个阶段.  As for me, 一个是懒，不想�
     
     gem 'github-pages', versions['github-pages']。
     ```
+    执行`bundle install`即可，详情参考：[https://jekyllrb.com/docs/github-pages/][R8]
 - 如何加入paginate
 
     在Gemfile中加入一行：`gem "jekyll-paginate"`
@@ -82,4 +83,5 @@ However, 我是直接skip了前两个阶段.  As for me, 一个是懒，不想�
 [R5]: https://learn.siteleaf.com/themes/gem-based-themes/
 [R6]: http://themes.jekyllrc.org/freshman21/
 [R7]: http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html
+[R8]: https://jekyllrb.com/docs/github-pages/
 
