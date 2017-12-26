@@ -31,7 +31,7 @@ However, 我是直接skip了前两个阶段.  As for me, 一个是懒，不想�
 # problems
 - 如何让本地运行的Jekylly Server与线上Github Pages上的一样
 
-    安装github-pages库，建一个Gemfile，并添加以下代码：
+    安装**github-pages**库，建一个**Gemfile**，并添加以下代码：
     ```$xslt
     source 'https://rubygems.org'
     
@@ -39,20 +39,20 @@ However, 我是直接skip了前两个阶段.  As for me, 一个是懒，不想�
     require 'open-uri'
     versions = JSON.parse(open('https://pages.github.com/versions.json').read)
     
-    gem 'github-pages', versions['github-pages']。
+    gem 'github-pages', versions['github-pages']
     ```
     执行`bundle install`即可，详情参考：[https://jekyllrb.com/docs/github-pages/][R8]
 - 如何加入paginate
 
-    在Gemfile中加入一行：`gem "jekyll-paginate"`
+    在**Gemfile**中加入一行：`gem "jekyll-paginate"`
 
 - about bundler
     
-    Bundler是一个用于管理ruby库的管理工具，所有的ruby库都可以根据写的Gemfile来进行安装，同时还可以对ruby库进行更新
+    **Bundler**是一个用于管理ruby库的管理工具，所有的ruby库都可以根据写的**Gemfile**来进行安装，同时还可以对ruby库进行更新
     
 - 怎么根据一个jekyll theme设置成可运行的Jekyll Server
 
-    First，通过各种不同的姿势谷歌出自己心意的jekyll theme，其实也就那几个网站而已. Then，把心意的jekyll theme下载下来，在一个看得顺眼的目录下执行`jekyll new xxxx`来初始化一个站点的文件. Last, 将文件解压到xxx的目录下即可. 要注意是要将生成的`index.md`去掉，使用解压出来的`index.html`
+    First，通过各种不同的姿势谷歌出自己心意的**jekyll theme**，其实也就那几个网站而已. Then，把心意的**jekyll theme**下载下来，在一个看得顺眼的目录下执行`jekyll new xxxx`来初始化一个站点的文件. Last, 将文件解压到xxx的目录下即可. 要注意是要将生成的`index.md`去掉，使用解压出来的`index.html`
 
 # fews of useful commands
 - 新建一个站点
