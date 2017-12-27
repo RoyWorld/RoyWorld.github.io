@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Java Lambda Expressions"
-date:   2017-09-17 23:49:20 -0700
+date:   2017-09-17 23:49:20
 category: java
 published: true
 author: RoyChan

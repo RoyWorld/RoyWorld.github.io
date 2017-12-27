@@ -26,7 +26,7 @@ markdown作为一种markup language, 由于可以使用css去self-defined样式,
 # freshman theme markdown syntax
 
 
-## Heading
+### Heading
 
 ~~~
 # Heading 1
@@ -40,7 +40,7 @@ markdown作为一种markup language, 由于可以使用css去self-defined样式,
 
 
 
-## Body text
+### Body text
 
 **This is strong**.
 
@@ -59,7 +59,7 @@ The New York Times <cite>(That’s a citation)</cite>.
 
 <del>HTML and CSS are our tools</del>. 
 
-## Blockquotes
+### Blockquotes
 
 > Justification:
 > This species is listed as Extinct in the Wild, as all populations are still under captive management. The captive population in China has increased in recent years, and the possibility remains that free-ranging populations can be established some time in the near future. When that happens, its Red List status will need to be reassessed. 
@@ -69,9 +69,9 @@ The New York Times <cite>(That’s a citation)</cite>.
 
 
 
-## List Types
+### List Types
 
-### Ordered Lists
+#### Ordered Lists
 
 1. Item one
    1. sub item one
@@ -79,13 +79,13 @@ The New York Times <cite>(That’s a citation)</cite>.
    3. sub item three
 2. Item two
 
-### Unordered Lists
+#### Unordered Lists
 
 * Item one
 * Item two
 * Item three
 
-## Tables
+### Tables
 
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
@@ -99,12 +99,12 @@ The New York Times <cite>(That’s a citation)</cite>.
 |ANIMALIA|CHORDATA|MAMMALIA|CETARTIODACTYLA|CERVIDAE|
 
 
-## Code Snippets
+### Code Snippets
 
 Syntax highlighting via Pygments
 
 {% highlight css %}
-#container {
+##container {
   float: left;
   margin: 0 -240px 0 0;
   width: 100%;
@@ -112,16 +112,7 @@ Syntax highlighting via Pygments
 {% endhighlight %}
 
 
-#### highlight with line number.
-
-{% highlight ruby linenos  %}
-def foo
-  puts 'foo'
-end
-{% endhighlight %}
-
-
-#### highlight using triple backticks
+##### highlight using triple backticks
 
 ```r
 a=1:10
@@ -129,18 +120,16 @@ for(i in a)
 {
   print(i)
 }
-
-
 ```
 
-## $$\LaTeX$$ 
+### $$\LaTeX$$ 
 
 you can use latex with <q>double $$ </q>
 
 $$e^{i\pi}+1=0$$
 
 
-## \<q\> tag
+### \<q\> tag
 
 here is a \<q\> q tag \</q\>
 
@@ -151,6 +140,7 @@ here is a <q> q tag </q>
 # references:
 - [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis][R1]
 - [http://yulijia.net/freshman/articles/2014/12/13/simple-post.html][R2]
+- [https://help.github.com/articles/basic-writing-and-formatting-syntax/][R3]
 
 [R1]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis
 [R2]: http://yulijia.net/freshman/articles/2014/12/13/simple-post.html

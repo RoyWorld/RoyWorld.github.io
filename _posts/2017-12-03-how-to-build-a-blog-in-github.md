@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How To Build A Blog In Github"
-date:   2017-12-03 15:34:50 -0700
+date:   2017-12-03 15:34:50
 category: other
 published: true
 author: RoyChan
