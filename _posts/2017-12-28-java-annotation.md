@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "java annotation"
-date:   2017-12-27 17:43:02
+date:   2017-12-28 17:43:02
 category: java
 published: true
 author: RoyChan
@@ -51,14 +51,14 @@ tags:
 
 # 自定义注解
 
-###定义注解格式
+### 定义注解格式
 `public @interface 注解名 {定义体}`
 
 其中的每一个方法实际上是声明了一个配置参数. 方法的名称就是参数的名称, 返回值类型就是参数的类型（返回值类型只能是基本类型、Class、String、enum）. 可以通过default来声明参数的默认值. 
 
 注: 使用`@interface`自定义注解时, 自动继承了`java.lang.annotation.Annotation`接口, 由编译程序自动完成其他细节. 在定义注解时, 不能继承其他的注解或接口
 
-###可支持的数据类型
+### 可支持的数据类型
 * 所有基本数据类型（int,float,boolean,byte,double,char,long,short)
 * String类型
 * Class类型
@@ -71,7 +71,7 @@ tags:
 # 注解处理器
 当实现一个注解, 若没有与之相关的处理器, 那么该注解就无异于注释, 而注解的处理就需要用到反射机制中的`AnnotatedElement`接口
 
-###实现AnnotatedElement接口的类
+### 实现AnnotatedElement接口的类
 `AnnotatedElement`接口代表程序中可以接受注解的程序元素,该接口主要有如下几个实现类: 
 * Class: 类定义
 * Constructor: 构造器定义
@@ -79,7 +79,7 @@ tags:
 * Method: 类的方法定义
 * Package: 类的包定义
 
-###AnnotatedElement接口的方法
+### AnnotatedElement接口的方法
 * 方法1: `<T extends Annotation> T getAnnotation(Class<T> annotationClass)`: 返回改程序元素上存在的、指定类型的注解, 如果该类型注解不存在, 则返回null. 
 * 方法2: `Annotation[] getAnnotations()`:返回该程序元素上存在的所有注解. 
 * 方法3: `boolean is AnnotationPresent(Class<?extends Annotation> annotationClass)`:判断该程序元素上是否包含指定类型的注解, 存在则返回true, 否则返回false.
