@@ -144,4 +144,4 @@ here is a <q> q tag </q>
 
 [R1]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis
 [R2]: http://yulijia.net/freshman/articles/2014/12/13/simple-post.html
-
+[R3]: https://help.github.com/articles/basic-writing-and-formatting-syntax/
