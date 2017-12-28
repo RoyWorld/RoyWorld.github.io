@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "java annotation"
+title:  "Java Annotation"
 date:   2017-12-28 17:43:02
 category: java
 published: true
@@ -10,11 +10,9 @@ tags:
 - annotation
 ---
 
-## Annotation
-
-# Annotation分类
+# type of Annotation
 根据注解参数的个数, 分为三类:
-* 标记注解:一个没有成员定义的Annotation类型被称为标记注解. 这种Annotation类型仅使用自身的存在与否来为我们提供信息. 比如后面的系统注解`@Override`
+* 标记注解. 一个没有成员定义的Annotation类型被称为标记注解. 这种Annotation类型仅使用自身的存在与否来为我们提供信息. 比如后面的系统注解`@Override`
 * 单值注解
 * 完整注解　
 
@@ -23,12 +21,12 @@ tags:
 * 元注解
 * 自定义注解
 
-# JDK内置系统注解
+# annotion in JDK
 * `@Override`: 用于修饰此方法覆盖了父类的方法
 * `@Deprecated`: 用于修饰已经过时的方法
 * `@SuppressWarnnings`: 用于通知java编译器禁止特定的编译警告
 
-# 元注解
+# meta annotion
 元注解的作用就是负责注解其他注解. Java5.0定义了4个标准的meta-annotation类型, 它们被用来提供对其它annotation类型作说明
 
 `@Target`表示该注解用于什么地方
@@ -49,7 +47,7 @@ tags:
 
 `@Inherited`元注解是一个标记注解, `@Inherited`阐述了某个被标注的类型是被继承的
 
-# 自定义注解
+# self-defined annotion
 
 ### 定义注解格式
 `public @interface 注解名 {定义体}`
@@ -66,9 +64,17 @@ tags:
 * Annotation类型
 * 以上所有类型的数组
 
--- 例子
+### Annotion Example
+```java
+@Target({ ElementType.FIELD, ElementType.LOCAL_VARIABLE })
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface TemplateField {
+    String value() default "";
+}
+```
 
-# 注解处理器
+# annotion resolver
 当实现一个注解, 若没有与之相关的处理器, 那么该注解就无异于注释, 而注解的处理就需要用到反射机制中的`AnnotatedElement`接口
 
 ### 实现AnnotatedElement接口的类
@@ -85,7 +91,30 @@ tags:
 * 方法3: `boolean is AnnotationPresent(Class<?extends Annotation> annotationClass)`:判断该程序元素上是否包含指定类型的注解, 存在则返回true, 否则返回false.
 * 方法4: `Annotation[] getDeclaredAnnotations()`: 返回直接存在于此元素上的所有注释. 与此接口中的其他方法不同, 该方法将忽略继承的注释. （如果没有注释直接存在于此元素上, 则返回长度为零的一个数组. ）该方法的调用者可以随意修改返回的数组；这不会对其他调用者返回的数组产生任何影响. 
 
-# 对于自定义注解处理和用途
+### annotion resolver example
+```java
+//利用反射，将实体中含有注解的field转化一个dataMap
+protected Map<String, Object> resloverClass(Object object){
+    Map<String, Object> data = new HashMap();
+    try{
+        Class clazz = object.getClass();
+        for (Field field : clazz.getDeclaredFields()){
+            if (field.isAnnotationPresent(TemplateField.class)){
+                String methodName = "get" + field.getName().substring(0,1).toUpperCase() + field.getName().substring(1);
+                Method method = clazz.getMethod(methodName);
+                TemplateField templateField = field.getAnnotation(TemplateField.class);
+                data.put(templateField.value(), method.invoke(object));
+            }
+        }
+    } catch (Exception e){
+        FactoryException factoryException = new FactoryException(e.getMessage());
+        logger.error(factoryException.getMessage());
+    }
+    return data;
+}
+```
+
+# about resolve and application fo self-defined annotion 
 1. 对于每个URI进行权限控制, 在controller的每个request上加入这种注解, 写一个自定义拦截器, 在请求处理前进行权限的判断
 
 2. 结合spring aop的特性, 在service执行某个方法前后去执行自定义注解的相关方法
@@ -93,5 +122,8 @@ tags:
 以上两者是从两个不同的方面进行运用, 一个是spring mvc, 另一个是spring data
 
 # references
-- http://www.cnblogs.com/peida/archive/2013/04/23/3036035.html
-- https://www.cnblogs.com/acm-bingzi/p/javaAnnotation.html
+- [http://www.cnblogs.com/peida/archive/2013/04/23/3036035.html][R1]
+- [https://www.cnblogs.com/acm-bingzi/p/javaAnnotation.html][R2]
+
+[R1]: http://www.cnblogs.com/peida/archive/2013/04/23/3036035.html
+[R2]: https://www.cnblogs.com/acm-bingzi/p/javaAnnotation.html
