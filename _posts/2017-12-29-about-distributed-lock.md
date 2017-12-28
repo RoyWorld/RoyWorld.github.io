@@ -18,39 +18,16 @@ distributed lock要满足的四个条件:
 * 具有容错性。只要大部分的Redis节点正常运行，客户端就可以加锁和解锁。
 * 解铃还须系铃人。加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了。
 
+# the core of distributed lock
+distributed lock的本质是将lock丢到一个third part进行管理, 所有的Client都对third part进行监听. 只有当lock不存在或被释放时, Client才能够获取lock. 同时要注意设置lock的expired time, 防止deadlock发生. 下图是architecture示意图
+
+![architecture](/images/2017-12-29.png)
+
 # three different realizations of distributed lock
 distributed lock有三种不同的实现方式, 分别是:
 * 数据库的乐观锁
 * 基于redis
 * 基于zookeeper
-
-# the core of distributed lock
-distributed lock的本质是
-
-`@Target`表示该注解用于什么地方
-* `ElemenetType.CONSTRUCTOR` 构造器声明 
-* `ElemenetType.FIELD` 域声明（包括enum实例） 
-* `ElemenetType.LOCAL_VARIABLE` 局部变量声明 
-* `ElemenetType.METHOD` 方法声明 
-* `ElemenetType.PACKAGE` 包声明 
-* `ElemenetType.PARAMETER` 参数声明 
-* `ElemenetType.TYPE` 类, 接口（包括注解类型）或enum声明 
-
-`@Retention`表示在什么级别保存该注解信息. 可选的 RetentionPolicy 参数包括: 
-* `RetentionPolicy.SOURCE` 注解将被编译器丢弃 
-* `RetentionPolicy.CLASS` 注解在class文件中可用, 但会被VM丢弃 
-* `RetentionPolicy.RUNTIME VM` 将在运行期也保留注释, 因此可以通过反射机制读取注解的信息. 
-
-`@Documented`用于描述其它类型的annotation应该被作为被标注的程序成员的公共API, 因此可以被例如javadoc此类的工具文档化
-
-`@Inherited`元注解是一个标记注解, `@Inherited`阐述了某个被标注的类型是被继承的
-
-
-# annotion resolver
-
-
-
-# about resolve and application fo self-defined annotion 
 
 
 # references
