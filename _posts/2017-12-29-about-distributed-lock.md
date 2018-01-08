@@ -21,22 +21,27 @@ distributed lock要满足的四个条件:
 # the core of distributed lock
 distributed lock的本质是将lock丢到一个third part进行管理, 所有的Client都对third part进行监听. 只有当lock不存在或被释放时, Client才能够获取lock. 同时要注意设置lock的expired time, 防止deadlock发生. 下图是architecture示意图
 
-![architecture](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20171229.png)
+![architecture](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20171229_architecture.png)
 
 # three different realizations of distributed lock
 distributed lock有三种不同的实现方式, 分别是:
-* 基于数据库的optimistic lock
+* [基于数据库的optimistic lock][R3]
 * [基于redis][R1]
 * [基于zookeeper][R2]
 
-以下仅对optimistic lock的实现方式进行记录, 其他两种都可以参照reference里的文章, 这里就不再赘述
-
-# using optimistic lock to realize distributed lock
-
+# the comparation of three methods
+* 从理解的难易程度角度(low to high): 数据库 > redis > Zookeeper
+* 从实现的复杂性角度(low to high): Zookeeper >= redis > 数据库
+* 从性能角度(high to low): redis > Zookeeper >= 数据库
+* 从可靠性角度(high to low): Zookeeper > redis > 数据库
 
 # references
 - [http://wudashan.cn/2017/10/23/Redis-Distributed-Lock-Implement/][R1]
 - [http://www.dengshenyu.com/java/分布式系统/2017/10/23/zookeeper-distributed-lock.html?utm_source=tuicool&utm_medium=referral][R2]
+- [http://blog.csdn.net/lmb55/article/details/78495629][R3]
+- [http://blog.csdn.net/erlian1992/article/details/78011313][R4]
 
 [R1]: http://wudashan.cn/2017/10/23/Redis-Distributed-Lock-Implement/
 [R2]: http://www.dengshenyu.com/java/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/2017/10/23/zookeeper-distributed-lock.html?utm_source=tuicool&utm_medium=referral
+[R3]: http://blog.csdn.net/lmb55/article/details/78495629
+[R4]: http://blog.csdn.net/erlian1992/article/details/78011313
