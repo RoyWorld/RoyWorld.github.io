@@ -105,10 +105,10 @@ result: x,y,z
 * Kahn's algorithm
 * DFS
 
-这两个algorithms的time complexity都是O(|V| + |E|), 由于DFS是一个十分强大和通用的algorithm, 为减小篇幅, 这里仅Kahn's algorithm进行介绍
+这两个algorithms的time complexity都是O(\|V\| + \|E\|), 由于DFS是一个十分强大和通用的algorithm, 为减小篇幅, 这里仅Kahn's algorithm进行介绍
 
 ### Kahn's algorithm
-##### Kahn's algorithm的伪代码:
+#### Kahn's algorithm的伪代码:
 ```java
 L ← Empty list that will contain the sorted elements
 S ← Set of all nodes with no incoming edge
@@ -125,7 +125,7 @@ else
     return L (a topologically sorted order)
 ```
 
-##### the realization in java
+#### the realization in java
 ```java
 public List<Integer> topologicalSorting(){
     LinkedList<Integer> sortedNodes = new LinkedList<>();//L, nodes that have bean sorted
@@ -193,7 +193,7 @@ public List<Integer> topologicalSorting(){
 }
 ```
 
-##### Kahn's algorithm的示意图
+#### Kahn's algorithm的示意图
 ![Kahn_algorithm_1](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20170105_Kahn_algorithm_1.png "Kahn's_algorithm_1")
 ![Kahn_algorithm_2](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20170105_Kahn_algorithm_2.png "Kahn's_algorithm_2")
 
