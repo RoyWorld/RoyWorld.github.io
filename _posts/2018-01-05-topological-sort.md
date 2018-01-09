@@ -105,7 +105,7 @@ result: x,y,z
 * Kahn's algorithm
 * DFS
 
-这两个algorithms的time complexity都是O(\|V\| + \|E\|), 由于DFS是一个十分强大和通用的algorithm, 为减小篇幅, 这里仅Kahn's algorithm进行介绍
+这两个algorithms的time complexity都是O(\|V\| + \|E\|), 由于DFS是一个十分强大和通用的algorithm, 为减小篇幅, 这里仅对Kahn's algorithm进行介绍
 
 ### Kahn's algorithm
 #### Kahn's algorithm的伪代码:
@@ -207,6 +207,7 @@ public List<Integer> topologicalSorting(){
 - [http://en.wikipedia.org/wiki/Topological_sorting][R4]
 - [http://en.wikipedia.org/wiki/Hamiltonian_path][R5]
 - [http://blog.csdn.net/jnu_simba/article/details/8872847][R6]
+- [http://www.nhu.edu.tw/~chun/DS(I)-Ch06-Graphs.pdf][R7]
 
 
 
@@ -216,3 +217,4 @@ public List<Integer> topologicalSorting(){
 [R4]: http://en.wikipedia.org/wiki/Topological_sorting
 [R5]: http://en.wikipedia.org/wiki/Hamiltonian_path
 [R6]: http://blog.csdn.net/jnu_simba/article/details/8872847
+[R7]: http://www.nhu.edu.tw/~chun/DS(I)-Ch06-Graphs.pdf
