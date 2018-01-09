@@ -131,24 +131,24 @@ public List<Integer> topologicalSorting(){
     LinkedList<Integer> sortedNodes = new LinkedList<>();//L, nodes that have bean sorted
     Set<Integer> zeroIndegreeNodes = new TreeSet<>();//S, nodes with no incoming edge
 
-    LinkedList<Integer> traveseAdjacency[] = new LinkedList[V];//travese adjacency list
+    LinkedList<Integer> transposeOfAdjacency[] = new LinkedList[V];//transpose of adjacency list
 
-    //travese adjacency init
-    IntStream.range(0, traveseAdjacency.length)
+    //transpose of adjacency init
+    IntStream.range(0, transposeOfAdjacency.length)
             .forEach(n -> {
-                traveseAdjacency[n] = new LinkedList<>();
+                transposeOfAdjacency[n] = new LinkedList<>();
             });
-    //tranform adjacency to travese adjacency
-    IntStream.range(0, traveseAdjacency.length)
+    //tranform adjacency to transpose of adjacency
+    IntStream.range(0, transposeOfAdjacency.length)
             .forEach(n -> {
                 adjacency[n].stream().forEach(m ->{
-                    traveseAdjacency[m].add(n);
+                    transposeOfAdjacency[m].add(n);
                 });
             });
 
     //zeroIndegreeNodes init
-    IntStream.range(0, traveseAdjacency.length)
-            .filter(i -> traveseAdjacency[i].size() == 0)
+    IntStream.range(0, transposeOfAdjacency.length)
+            .filter(i -> transposeOfAdjacency[i].size() == 0)
             .forEach(i -> {
                 zeroIndegreeNodes.add(i);
             });
@@ -169,10 +169,10 @@ public List<Integer> topologicalSorting(){
         while (mIterator.hasNext()){
             Integer m = mIterator.next();
             mIterator.remove();//remove edge e from the graph
-            traveseAdjacency[m].remove(n);//remove edge e from the graph
+            transposeOfAdjacency[m].remove(n);//remove edge e from the graph
 
             //judge does m has no other incoming edges
-            if (traveseAdjacency[m].size() == 0){
+            if (transposeOfAdjacency[m].size() == 0){
                 zeroIndegreeNodes.add(m);//insert m into S
             }
         }
