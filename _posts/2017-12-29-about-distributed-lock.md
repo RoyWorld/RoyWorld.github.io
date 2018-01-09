@@ -21,7 +21,7 @@ distributed lock要满足的四个条件:
 # the core of distributed lock
 distributed lock的本质是将lock丢到一个third part进行管理, 所有的Client都对third part进行监听. 只有当lock不存在或被释放时, Client才能够获取lock. 同时要注意设置lock的expired time, 防止deadlock发生. 下图是architecture示意图
 
-![architecture](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20171229_architecture.png)
+![architecture](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20171229/20171229_architecture.png)
 
 # three different realizations of distributed lock
 distributed lock有三种不同的实现方式, 分别是:

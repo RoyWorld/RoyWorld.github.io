@@ -18,7 +18,7 @@ tags:
 > definition
 > A directed graph in which the vertices represent tasks or activities and the edges represent precedence relations between tasks.
 
-需要注意的是: 在AOV中是不能有cycles, 让一个activity的开始要以自身的结束为条件, 这显然是不合理的, 即: Directed Acyclic Graph
+To be careful: 在AOV中是不能有cycles, 让一个activity的开始要以自身的结束为条件, 这显然是不合理的, 即: Directed Acyclic Graph
 
 ### the definition in mathematics
 这个definition本质上就是DAG的definition
@@ -31,7 +31,7 @@ Example: a graph G
 * $$V(G) = {0, 1, 2, 3, 4}$$
 * $$E(G) = {<0,1>,<0,3>,<1,2>,<3,1>,<3,2>}$$
 
-![DAG](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20170105_DAG.png)
+![DAG](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180105/20180105_DAG.png)
 
 ### the realization in computer science
 ```java
@@ -194,10 +194,10 @@ public List<Integer> topologicalSorting(){
 ```
 
 #### Kahn's algorithm的示意图
-![Kahn_algorithm_1](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20170105_Kahn_algorithm_1.png "Kahn's_algorithm_1")
-![Kahn_algorithm_2](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20170105_Kahn_algorithm_2.png "Kahn's_algorithm_2")
+![Kahn_algorithm_1](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180105/20180105_Kahn_algorithm_1.png "Kahn's_algorithm_1")
+![Kahn_algorithm_2](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180105/20180105_Kahn_algorithm_2.png "Kahn's_algorithm_2")
 
-**Conclusion**: Kahn's algorithm的实现十分简单明了, 仅需维护一个S集(Set of all nodes with no incoming edge)即可
+**Conclusion**: Kahn's algorithm的实现十分简单明了, 仅需维护一个**S集**(Set of all nodes with no incoming edge)即可
 
 
 # references
