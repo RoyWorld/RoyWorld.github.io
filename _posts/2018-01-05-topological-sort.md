@@ -183,7 +183,7 @@ public List<Integer> topologicalSorting(){
 
     //judge does graph has edges
     for (int i = 0; i < adjacency.length; i++) {
-        if (adjacency[i].size() == 0){
+        if (adjacency[i].size() != 0){
             System.out.println("AOVNetwork has cycles");
             return null;
         }
