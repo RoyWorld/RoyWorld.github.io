@@ -81,6 +81,7 @@ There are three valid standard file names you can choose from:
 
 configuration中的两种logger:
 * root logger:
+
 ```xml
 <root level="debug">
     <appender-ref ref="STDOUT" />
@@ -88,11 +89,13 @@ configuration中的两种logger:
 ```
 This sits at the top of the logger hierarchy and is provided by default, even if you don’t configure it explicitly, with a ConsoleAppender with the DEBUG level.
 * normal logger. 
+
 ```xml
 <logger level="info" name="rollingFileLogger">
     <appender-ref ref="rollingFileAppender" />
 </logger>
 ```
+
 If you don’t explicitly define a log level, the logger will inherit the level of its closest ancestor; in this case, the DEBUG level of the root logger.
 
 
@@ -114,6 +117,7 @@ To disable this behavior, you need to set the additivity=false property on the l
 * NEUTRAL. NEUTRAL allows the next filters in the chain to be evaluated. If there are no more filters, the message is logged.
 
 与log level有关的filter: `LevelFilter`和`ThresholdFilter`
+
 对event做评估来决定是否输出log: `GEventEvaluator`和`JaninoEventEvalutor`
 
 ### extending logback
