@@ -16,10 +16,12 @@ tags:
 
 # basic concern
 ### what is log
-实质上, log是一个输出program各种信息的工具, 可以说存在于任何program中, 而不同的仅仅是其展示形式, 而常见的展示形式有: **console out、file、数据库记录、页面弹出窗**等等, 其中console out是最为常见的形式.
+实质上, **log是一个输出program各种信息的工具, 可以说存在于任何program中, 而不同的仅仅是其展示形式**, 而常见的展示形式有: **console out、file、数据库记录、页面弹出窗**等等, 其中**console out**是最为常见的形式.
 
 ### log level
-log level可以说是log framework中最为重要的concern. why? 原因是log level如下作用:
+log level可以说是log framework中最为重要的concern. why? 
+
+原因是log level如下作用:
 1. 设置log level有助于区分log的类别和重要性, 并以此筛选有用的信息.
 2. 通过控制log level来控制输出的log信息. 
 3. 由于输出了program的runtime信息, 所以对program的监控和调试都很有帮助.
@@ -35,6 +37,8 @@ log level可参考下图:
  
 # about logback
 关于logback的使用, 这里仅做简单的记录, 更详细的说明就参考这篇[paper][R1]
+
+如果要查看一个完整的logback配置实例, 则可参考这篇[paper][R2]
 
 ### logback configuration files
 There are three valid standard file names you can choose from:
@@ -54,18 +58,19 @@ There are three valid standard file names you can choose from:
 > * SiftingAppender – separates logs based on a runtime attribute
 
 上述是logback提供的`appender`, 实质上只需要实现`Appender interface`即可做`custom appender`, 示例如下:
-[java code][R4], xml配置:
+* [java code][R4], 
+* xml配置:
+
 ```xml
 <appender name="DEBUG-FILE-APPENDER" class="com.trasher.util.CountingFileAppender">
-        <limit>100</limit>
-        <file>${user.dir}/logs/debug.log</file>
-        <encoder>
-            <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n
-            </pattern>
-        </encoder>
-        <append>true</append>
-
-    </appender>
+    <limit>100</limit>
+    <file>${user.dir}/logs/debug.log</file>
+    <encoder>
+        <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n
+        </pattern>
+    </encoder>
+    <append>true</append>
+</appender>
 ```
 
 
