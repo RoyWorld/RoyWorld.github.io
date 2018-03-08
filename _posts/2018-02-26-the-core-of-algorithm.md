@@ -11,18 +11,20 @@ tags:
 ---
 
 # what is algorithm
-In my opinion, 算法实质就是描述某种抽象问题的解决方案. However, 这仅仅只是对那些比较高级和著名的算法而言, 如: DFS和BFS解决了如何遍历一个图，Shortest Path解决了节点间的最短路径问题. 
+In my opinion, 算法实质就是描述某种抽象问题的解决方案. However, 这仅仅只是对那些比较高级和著名的算法而言, 如: DFS和BFS解决了如何遍历一个图, Shortest Path解决了节点间的最短路径问题. 
 
-而对于一般的算法, 它们应用的范围并不广泛, 用途仅仅只是解决某个特定问题, 如: 解决某一算法题所用到的算法. 这类算法通常是由最基本的操作所组成的,  
+而对于一般的算法, 它们应用的范围并不广泛, 用途仅仅只是解决某个特定问题, 如: 解决某一算法题所用到的算法. 这类算法通常是由最基本的操作所组成的  
 
 # algorithm and math
 algorithm和math的联系是非常紧密的, 而algorithm对应的数学分支是Concrete Mathematics. why? 下面用一个例子说明.
 
-首先要明确的是，Concrete Mathematics是由**集合论、图论、代数结构、组合数学和数理逻辑**组成, 其中最为重要的是**图论、代数结构和数理逻辑**. 这三部分的知识是用得最多的, 下面也是围绕着这三部分进行讲解，而这三部分的相关知识这里就不再赘述了
+首先要明确的是, Concrete Mathematics是由**集合论、图论、代数结构、组合数学和数理逻辑**组成, 其中最为重要的是**图论、代数结构和数理逻辑**. 这三部分的知识是用得最多的, 下面也是围绕着这三部分进行讲解, 而这三部分的相关知识就不是这篇paper的讨论范围
 
-对于一个实际的问题，通过合理地建模, 便可运用相关知识进行分析，以下是建模的方式:
+对于一个实际的问题, 通过合理地建模, 便可运用相关知识进行分析
+
+以下是建模的方式:
 * 图论, 将现实中的结构化模型抽象成由点线组成的图
-* 代数结构, 将输入看作是数据集，而运算的过程中所涉及的所有操作看作是操作集
+* 代数结构, 将输入看作是数据集, 而运算的过程中所涉及的所有操作看作是操作集
 * 数理逻辑, 将整个运算过程转化成逻辑推理过程
 
 
@@ -118,7 +120,18 @@ void iSort2(Integer[] a, int index){
 ```
 
 # important thought
+在algorithm中, 有几个十分重要的思想，这些思想可以说是algorithm的核心，直接影响了一个具体algorithm的设计和实现
+
+限于篇幅，下面仅仅只作提及，不进行详尽地描述, 如下:
 * 贪心算法(gready algorithms)
 * 分治策略(divide and conquer strategy)
 * 动态规划(dynamic programming)
 
+
+# reference
+- [https://www.toptal.com/developers/sorting-algorithms/insertion-sort][R1]
+- [https://baike.baidu.com/item/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2396?fr=aladdin][R2]
+
+
+[R1]: https://www.toptal.com/developers/sorting-algorithms/insertion-sort
+[R2]: https://baike.baidu.com/item/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2396?fr=aladdin
