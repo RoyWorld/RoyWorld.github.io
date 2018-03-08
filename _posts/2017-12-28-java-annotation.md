@@ -114,7 +114,7 @@ protected Map<String, Object> resloverClass(Object object){
 }
 ```
 
-# about resolve and application fo self-defined annotion 
+# about self-defined annotion in application
 1. 对于每个URI进行权限控制, 在controller的每个request上加入这种注解, 写一个自定义拦截器, 在请求处理前进行权限的判断
 
 2. 结合spring aop的特性, 在service执行某个方法前后去执行自定义注解的相关方法
