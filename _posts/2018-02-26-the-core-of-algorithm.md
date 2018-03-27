@@ -28,15 +28,12 @@ algorithm和math的联系是非常紧密的, 而algorithm对应的数学分支�
 * 数理逻辑, 将整个运算过程转化成逻辑推理过程
 
 
-
 # basic operators
 所有的algorithm都包含以下这些基本的操作, 这些操作在某种程度上是等同于基本运算法则, 如: 加减乘除、异或、同或. 而算法中最为常用的基本操作如下:
 * 遍历(traverse)
 
 ```java
-/**
- * Pseudo code
- */
+//Pseudo code
 for i = 1:n
     ...
 end
@@ -44,17 +41,13 @@ end
 * 交换(swap)
 
 ```java
-/**
- * Pseudo code
- */
+//Pseudo code
 swap(a, b)
 ```
 * 比较(comparation)
 
 ```java
-/**
- * Pseudo code
- */
+//Pseudo code
 compare(a, b)
 ```
 * 递归(recursion)
@@ -130,7 +123,8 @@ void iSort2(Integer[] a, int index){
 
 # reference
 - [https://www.toptal.com/developers/sorting-algorithms/insertion-sort][R1]
-- [https://baike.baidu.com/item/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2396?fr=aladdin][R2]
+- [https://baike.baidu.co
+m/item/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2396?fr=aladdin][R2]
 
 
 [R1]: https://www.toptal.com/developers/sorting-algorithms/insertion-sort
