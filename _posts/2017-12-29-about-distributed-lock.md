@@ -31,7 +31,7 @@ distributed lock有三种不同的实现方式, 分别是:
 
 # the comparation of three methods
 * 从理解的难易程度角度(low to high): 数据库 > redis > Zookeeper
-* 从实现的复杂性角度(low to high): Zookeeper >= redis > 数据库
+* 从实现的复杂性角度(low to high): 数据库 > redis >= Zookeeper
 * 从性能角度(high to low): redis > Zookeeper >= 数据库
 * 从可靠性角度(high to low): Zookeeper > redis > 数据库
 
