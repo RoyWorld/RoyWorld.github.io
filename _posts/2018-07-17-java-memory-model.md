@@ -39,7 +39,7 @@ tags:
 java编译器在生成指令序列的适当位置会插入内存屏障指令来禁止特定类型的处理器重排序。内存屏障指令分为下列四类：
 
 | 屏障类型 | 指令示例| 说明 |
-|:--------|:-------:|--------:|
+|:--------|:-------:|:--------|
 | LoadLoad Barriers| Load1;LoadLoad;Load2 | 确保Load1数据的装载，之前于Load2及所有后续装载指令的装载 |
 | StoreStore Barriers | Store1;StoreStore;Store2 | 确保Store1数据对其他处理器可见（刷新到内存），之前于Store2及所有后续存储指令的存储 |
 | LoadStore Barriers | Load1;LoadStore;Store2 | 确保Load1数据装载，之前于Store2及所有后续存储指令的存储 |
