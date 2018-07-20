@@ -326,6 +326,42 @@ public class FinalReferenceEscapeExample{
 
 从上图可以看出：在构造函数返回前，被构造对象的引用不能为其他线程可见，因为此时的final域可能还没有被初始化。在构造函数返回后，任意线程都将保证能看到final域正确初始化之后的值。
 
+# summary
+顺序一致性模型是一个理论参考模型，JMM和处理器内存模型在设计上通常会把顺序一致性内存模型作为参考。根据对不同类型读/写操作组合的执行顺序的放松，可以分为下面几种类型：
+1. 放松写-读操作顺序，由此产生total store ordering内存模型（TSO）
+2. 在前面1的基础上，继续放松程序中写-写操作的顺序，由此产生partial store order内存模型（PSO）
+3. 在前面1和2的基础上，继续放松程序中读-写和读-读操作的顺序，由此产生了relaxed memory order内存模型（RMO）和PowerPC内存模型
+
+JMM在不同处理器中需要插入的内存屏障的数量和种类也不相同
+
+![summary_1](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180717/20180717_summary_1.png)
+
+JMM，处理器内存与顺序一致性内存模型之间的关系
+
+![summary_2](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180717/20180717_summary_2.png)
+
+JMM的设计示意图
+
+![summary_3](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180717/20180717_summary_3.png)
+
+JMM把happens-before要求禁止的重排序分成两类：
+* 会改变程序执行结果的重排序
+* 不会改变程序执行结果的重排序
+
+JMM对两种不同性质的重排序，采取了不同策略：
+* 对于会改变程序执行结果的重排序，JMM要求编译器和处理器必须禁止这种重排序
+* 对于不会改变程序执行结果的重排序，JMM对编译器和处理器不作要求
+
+![summary_4](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180717/20180717_summary_4.png)
+
+JMM的内存可见性保证
+java的内存可见性保证程序类型可以分为三类：
+1. 单线程程序。单线程程序不会出现内存可见性问题。编译器，runtime和处理器会共同确保单线程程序的执行结果与该程序在顺序一致性模型中的执行结果相投。
+2. 正确同步的多线程程序。正确同步的多线程程序的执行将具有顺序一致性。
+3. 未同步/未正确同步的多线程程序。JMM提供最小安全性保障：线程执行时读取到的值，要么是之前某个线程写入的值，要么是默认值（0，null，false）。
+
+![summary_5](https://raw.githubusercontent.com/RoyWorld/RoyWorld.github.io/master/images/20180717/20180717_summary_5.png)
+
 # reference
 - [http://ifeve.com/java-memory-model-0/][R1]
 
